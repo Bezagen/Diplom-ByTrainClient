@@ -1,0 +1,100 @@
+﻿<Window x:Class="ByTrainClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ByTrainClient"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="360" 
+        Width="300"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        BorderBrush="Black"
+        BorderThickness="1"
+        FontFamily="Consolas"
+        Background="#1f2833">
+
+    <Window.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="View/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Window.Resources>
+
+    <Grid>
+        <Rectangle 
+            x:Name="MoveRectangle" 
+            Fill="#202022" 
+            HorizontalAlignment="Stretch" 
+            Height="25" 
+            VerticalAlignment="Top"
+            MouseDown="MoveRectangle_MouseDown"/>
+        <StackPanel
+            Orientation="Horizontal"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right">
+            <Button x:Name="MinimazeButton" 
+            Style="{StaticResource MinimazeButton}"
+            Content="-" 
+            HorizontalAlignment="Left" 
+            Margin="0" 
+            VerticalAlignment="Top" 
+            Foreground="Snow"
+            Width="25" Height="25" Click="MinimazeButton_Click_1"/>
+            <Button x:Name="CloseButton"
+            Style="{StaticResource CloseButton}"
+            Content="X" 
+            HorizontalAlignment="Left" 
+            Margin="0" 
+            VerticalAlignment="Top" 
+            Foreground="Snow"
+            Width="25" Height="25" Click="CloseButton_Click"/>
+        </StackPanel>
+
+        <Border
+            Background="#00BBC9"
+            CornerRadius="25"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <StackPanel
+                Margin="12">
+                <TextBlock
+                    FontSize="22"
+                    Text="Авторизация"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,30"/>
+                <TextBlock
+                    FontSize="20"
+                    Text="Логин"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    x:Name="LoginTextBox"
+                    FontSize="20"
+                    MinWidth="150"/>
+                <TextBlock
+                    Margin="0,5,0,0"
+                    FontSize="20"
+                    Text="Пароль"
+                    HorizontalAlignment="Center"/>
+                <PasswordBox
+                    x:Name="PasswordTextBox"
+                    FontSize="20"
+                    MinWidth="150"
+                    PasswordChar="*"/>
+                <Button
+                    x:Name="EnterButton"
+                    Margin="0,10,0,0"
+                    Content="Войти"
+                    FontSize="20"
+                    Style="{StaticResource SimpleButton}"
+                    Click="EnterButton_Click"/>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
